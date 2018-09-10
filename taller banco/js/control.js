@@ -1,5 +1,11 @@
 //Funcion que se ejecuta al cargar la pagina
 $(document).ready(function(){
+
+	let campo = document.getElementById("valorM");
+
+
+	campo.addEventListener("keypress", soloNumeros, false);
+
 	let tabla = document.getElementById("tabla");
 	//for que recorre todos los items almacenados en el localStorage segun la posicion de su KEY
 	for (var i = 0; i < localStorage.length; i++) {
@@ -120,5 +126,10 @@ function validations(n,t,v){
 
 }
 
-
+function soloNumeros(e){
+  var key = window.event ? e.which : e.keyCode;
+  if (key < 48 || key > 57) {
+    e.preventDefault();
+  }
+}
 

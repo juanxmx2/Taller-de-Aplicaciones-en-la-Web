@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Movimiento de Clientes</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+</head>
+<body>
+
+	<div class="container">
+		 
+		<h1 class="titulo">Movimientos Clientes</h1>
+
+		<hr>
+
+		 <div class="row">
+		 		
+		 	<div class="col-md-12">
+		 		
+
+		 		<form class="form">
+		 			
+
+		 		<div class="col-sm-6">
+		 			
+		 		<div class="form-group">
+		 			<strong><label>Nombre Movimiento</label></strong> <input type="text" class="form-control" id="nombreM" name="">
+		 		</div>		
+
+		 			<div class="form-group">
+		 			<strong><label>Tipo Movimiento</label></strong>
+					<select class="form-control" id="tipoM">
+						<option>-Seleccione una opción-</option>
+						<option>Pago Tarjeta Credito</option>
+						<option>Pago Credito</option>
+						<option>Avances</option>
+
+					</select>
+
+		 		</div>	
+
+
+		 		<div class="form-group">
+				 	<strong><label>Valor Movimiento</label></strong>
+		 			<input type="text" class="form-control" id="valorM" name="" placeholder="$">
+
+		 		</div>		
+
+
+		 		</div>
+
+		 		<div class="col-sm-6 boton">
+		 			
+		 			<input type="button" class="btn btn-info" value="Crear Movimiento" onclick="addData();">
+
+
+		 		</div>
+
+		 		</form>
+
+		 	
+
+
+		 	</div>	
+
+
+		 </div>
+
+	</div>
+
+
+	<div class="container">
+		
+		<table class="table tabled-border table-dark" id="tabla">
+			
+			<thead>
+				
+				<th>Nombre Movimiento</th>
+				<th>Tipo Movimiento</th>
+				<th>Valor Movimiento</th>
+				<th>Fecha Registro</th>
+				<th>Acción</th>
+			</thead>
+
+		</table>
+
+	</div>
+
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/control.js"></script>
+
+</body>
+</html>

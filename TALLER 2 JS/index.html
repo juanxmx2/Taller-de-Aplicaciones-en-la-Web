@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Ejercicios JavaScript</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <script src="ejercicio1.js"></script>
+    <script src="ejercicio2.js"></script>
+    <script src="ejercicio3.js"></script>
+
+
+    <script type="text/javascript">
+    	
+    	function script1(){
+    		var arraySum = function(array) {
+  	
+	let total = 0;
+
+  	for (var i = array.length - 1; i >= 0; i--) {
+  		total += array[i];
+  	}
+
+  	return total;
+};
+
+// Prueba (No modificar)
+
+var a = [7, 6, 5, 4, 3];
+var b = [-3, -4, -5, -6, -7];
+var c = [33];
+
+if (arraySum(a) === 25 &&
+    arraySum(b) === -25 &&
+    arraySum(c) === 33) {
+  document.getElementById("s1").innerHTML = "Ejercicio 1 paso la prueba!";
+} else {
+  document.getElementById("s1").innerHTML = "Ejercicio 1 no paso la prueba!";
+}
+    	}
+
+   function script2(){
+   	var colorCabello = function(personas) {
+      
+      
+
+      if(personas.length > 1){
+
+          var temp = 0;
+          var temp_color = "";
+        for (var i = 0; i < personas.length; i++) {
+          
+          if(temp == 0){
+            if(personas[i].edad > personas[i+1].edad){
+               temp = personas[i].edad;
+               temp_color = personas[i].colorCabello;
+          }else{
+               temp = personas[i+1].edad;
+               temp_color = personas[i+1].colorCabello; 
+          }  
+          }else{
+            if(temp >= personas[i].edad){
+
+                return temp_color;
+            }else{
+                return personas[i+1].colorCabello;
+            }
+          }
+          
+
+        }
+
+      }else{	
+        return personas[0].colorCabello;
+      } 
+
+};
+
+// Prueba (No modificar)
+
+var persona1 = {
+  nombres: 'Kirk',
+  apellidos: 'Hummer',
+  edad: 27,
+  colorCabello: 'Rubio'
+};
+var persona2 = {
+  nombres: 'Homero',
+  apellidos: 'Simpson',
+  edad: 30,
+  colorCabello: 'Cafe Oscuro'
+};
+var persona3 = {
+  nombres: 'Eric',
+  apellidos: 'Cartman',
+  edad: 10,
+  colorCabello: 'Cafe'
+};
+var persona4 = {
+  nombres: 'Rick',
+  apellidos: '-',
+  edad: 105,
+  colorCabello: 'Azul'
+};
+
+var personas1 = [persona1];
+var personas2 = [persona1, persona3];
+var personas3 = [persona1, persona2, persona3];
+var personas4 = [persona3, persona4];
+
+if (colorCabello(personas1) === 'Rubio' &&
+    colorCabello(personas2) === 'Rubio' &&
+    colorCabello(personas3) === 'Cafe Oscuro' &&
+	colorCabello(personas4) === 'Azul') {
+document.getElementById("s2").innerHTML = 'Ejercicio 2 paso el test!';
+} else {
+document.getElementById("s2").innerHTML =  'Ejercicio 2 no paso el test!';
+}
+   }
+
+
+   function script3(){
+
+
+
+ var arrayDoble = function(array, callback) {
+
+   		for (var i = array.length - 1; i >= 0; i--) {
+   			array[i] = callback(array[i]);
+   		}
+ };
+
+ var array = [2, 3, 4];
+
+ arrayDoble(array, function(value) {
+  	return value * 2;
+ });
+
+// Prueba (No modificar!)
+if (array.length === 3 &&
+    array[0] === 4 &&
+    array[1] === 6 &&
+    array[2] === 8) {
+  document.getElementById("s3").innerHTML =  'Ejercicio 3 paso el test!';
+} else {
+  document.getElementById("s3").innerHTML =  'Ejercicio 3 no paso el test!';
+}
+
+
+   }
+
+    </script>
+
+  </head>
+  <body style="background-color: #0D84D1;">
+
+
+  	<div class="container">
+  		
+  				<h1 style="text-align: center; text-shadow: 2px 2px #4F5050; margin-bottom: 5%; color: #ffffff;"><em>TALLER 2 DE JAVASCRIPT</em></h1>
+
+  			<div class="row">
+  				
+
+  			
+
+  			
+  			<div class="col-4">
+  					
+  					<div class="form-group">
+  						
+  						  	<input type="button" onclick="script1();" class="btn btn-info" value="Script 1" name="">
+
+  					</div>
+
+
+  					<div class="form-group">
+  						
+  						  	<textarea  id="s1" style="width: 100%; resize: none;" placeholder="Aca aparecera el resultado"></textarea>
+  						
+  					</div>
+
+
+  			</div>
+
+
+  			<div class="col-4">
+  					
+  					<div class="form-group">
+  						
+  						  	
+  						<input type="button" onclick="script2();" class="btn btn-warning" value="Script 2" name="">
+
+  					</div>
+
+
+  					<div class="form-group">
+  						
+  						  	<textarea  id="s2" style="width: 100%; resize: none;" placeholder="Aca aparecera el resultado"></textarea>
+  						
+  					</div>
+
+
+  			</div>
+
+
+
+  		<div class="col-4">
+  					
+  					<div class="form-group">
+  						
+  						  	<input type="button" onclick="script3();" class="btn btn-danger" value="Script 3" name="">
+
+  					</div>
+
+
+  					<div class="form-group">
+  						
+  						  	<textarea  id="s3" style="width: 100%; resize: none;" placeholder="Aca aparecera el resultado"></textarea>
+  						
+  					</div>
+
+
+  		</div>  	
+
+  		</div>
+
+  	</div>
+
+  	<footer  style="color: white; position: bottom; text-align: center; text-shadow: 2px 2px #4F5050;">Desarrollado por Juan Manuel Rodríguez cod: 1255801-2711</footer>
+
+  </body>
+</html>
